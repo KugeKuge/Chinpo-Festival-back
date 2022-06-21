@@ -89,9 +89,9 @@ def search_tweet(): #search,tweet_max):
         chinpo_tweets_from_twitter = get_chinpo_tweet_from_twitter()
 
         database.remove_all_chinpoTweets()
+        database.insert_chinpo_many(chinpo_tweets_from_twitter)
         
         for document in chinpo_tweets_from_twitter:
-            database.insert_chinpo_one(document)
             del document['_id']
         
         # 最終更新時刻を更新

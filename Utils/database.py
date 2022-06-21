@@ -8,6 +8,9 @@ latest_chinpo_tweet_time = chinpo_tweet_db.LastGet
 
 def insert_chinpo_one(document):
     chinpo_tweet_collection.insert_one(document)
+    
+def insert_chinpo_many(documents):
+    chinpo_tweet_collection.insert_many(documents)
 
 def remove_all_chinpoTweets():
     chinpo_tweet_collection.delete_many({})
