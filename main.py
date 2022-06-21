@@ -13,6 +13,7 @@ origins = [
     "http://localhost:3000",
     "http://192.168.10.14:3000",
     "http://192.168.10.14",
+    "https://chinpo-festival-front.vercel.app",
 ] #通信するreactなどのアプリのURLを記載
 
 app.add_middleware(
