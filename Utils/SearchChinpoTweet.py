@@ -16,7 +16,7 @@ start_time = now - timedelta(days=1)
 start_time_tweepy = str(start_time.isoformat())+'+09:00'
 
 # ★必要情報入力
-SEARCH_CHARACTER    = "ちんぽ OR チンポ"  # 検索対象
+SEARCH_CHARACTER    = "ちんぽ OR チンポ -is:retweet"  # 検索対象
 TWEET_MAX = 100           # 取得したいツイート数(10〜100で設定可能)
 LAST_GET_MINUTES = -1     # 5分以上処理されてなかったら再取得する
 
