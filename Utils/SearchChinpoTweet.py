@@ -18,7 +18,7 @@ start_time_tweepy = str(start_time.isoformat())+'+09:00'
 # ★必要情報入力
 SEARCH_CHARACTER    = "ちんぽ OR チンポ"  # 検索対象
 TWEET_MAX = 100           # 取得したいツイート数(10〜100で設定可能)
-LAST_GET_MINUTES = -5     # 5分以上処理されてなかったら再取得する
+LAST_GET_MINUTES = -1     # 5分以上処理されてなかったら再取得する
 
 # クライアント関数を作成
 def ClientInfo():
@@ -85,7 +85,7 @@ def search_tweet(): #search,tweet_max):
         latest_chinpo_datetime = datetime.strptime(latest_chinpo_time['latest_time'], '%Y-%m-%d_%H:%M:%S')
     
     if datetime.now() + timedelta(minutes=LAST_GET_MINUTES) > latest_chinpo_datetime:
-        # 1分以上たっている場合はDB全消ししてTwitterから取得し入れなおす。
+        # 5分以上たっている場合はDB全消ししてTwitterから取得し入れなおす。
         chinpo_tweets_from_twitter = get_chinpo_tweet_from_twitter()
 
         database.remove_all_chinpoTweets()
