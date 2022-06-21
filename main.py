@@ -33,6 +33,7 @@ def GetRecentChinpo():
     results = SearchChinpoTweet.search_tweet()
     return results
 
+@app.post("/chinpo") 
 def letsChinpo(item: ChinpoImageItem): # リクエストボディで送る場合    
     base64_image_string = item.base64_image_string
     
